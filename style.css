@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+button {
+    height: 75px;
+    width: 150px;
+    margin: 15px;
+    background-color: blue;
+    border: solid 1px orange;
+    border-radius: 8%;
+    color: pink;
+    font-size: 20px;
+    border: none;
+}
+
+button:hover {
+    background-color: pink;
+    color: blue;
+}
+
+.cell {
+    background-color: white;
+    border: 1px gray solid;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    max-height: 700px;
+    border: black solid 2px;
+}
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(182, 162, 240);
+    border: 2px solid black;
+}
+
