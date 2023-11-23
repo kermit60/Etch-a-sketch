@@ -4,6 +4,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+
+#color-picker {
+    width: 100px;
+    height: 25px;
+    border: none;
+    margin-top: 7px;
+}
+
 #buttons {
     display: flex;
     flex-direction: row;
@@ -11,8 +20,8 @@
 }
 
 button {
-    height: 75px;
-    width: 150px;
+    height: 60px;
+    width: 110px;
     margin: 15px;
     background-color: blue;
     border: solid 1px orange;
@@ -23,7 +32,7 @@ button {
 }
 
 button:hover {
-    background-color: pink;
+    background-color: rgb(212, 212, 212);
     color: blue;
 }
 

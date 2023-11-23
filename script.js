@@ -2,10 +2,12 @@ const HEIGHT = 700;
 const grid = document.querySelector('.grid');
 const resetBut = document.querySelector('.reset');
 const changeColorBut = document.querySelector('.change-color');
+const rainbow = document.querySelector('.rainbow');
 const erase = document.querySelector('.erase');
 const sizeChange = document.querySelector('.size');
+
 let color = 'black';
-color = document.querySelector('input').value;
+let tempColor = 'white';
 let isDown = false;
 
 
@@ -27,10 +29,14 @@ let createDivs = numDiv => {
         
         cell.addEventListener('mousedown', () => {
             isDown = true;
+            cell.style.backgroundColor = color;
         });
 
         cell.addEventListener('mousemove', () => {
             if (isDown) {
+                if (rainbowActive) {
+                    rainbowColor()
+                }
                 cell.style.backgroundColor = color;
             }
         });
@@ -52,27 +58,50 @@ resetBut.addEventListener('click', () => {
         
     })
 });
+
 // changing the color of the paint
+const colour = document.querySelector('#color-picker');
+colour.addEventListener('input', (e) => {
+    rainbowActive = false;
+    color = e.target.value;
+});
+
 changeColorBut.addEventListener('click', () => {
-    color = document.querySelector('input').value;
+    rainbowActive = false;
+    color = tempColor;
 });
 
 // making the erase function
 erase.addEventListener('click', ()=> {
+    rainbowActive = false;
     color = 'white';
 });
 
 sizeChange.addEventListener('click', () => {
     let size = parseInt(prompt("Please enter grid-size: 16-100"));
+    rainbowActive = false;
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
     createDivs(size)
 });
 
-// needs to do:
-// change color of the colouring paint completed
-// hover and mousedown painting
+let rainbowActive = false;
+function rainbowColor() {
+    rainbowActive = true;
+    const randomR = Math.floor(Math.random() * 256)
+    const randomG = Math.floor(Math.random() * 256)
+    const randomB = Math.floor(Math.random() * 256)
+    color = `rgb(${randomR}, ${randomG}, ${randomB})`
+}
+
+rainbow.addEventListener('click', () => {
+    tempColor = color;
+    rainbowColor();
+});
+
+// enhance the design and code refactoring
 
 
+// default size
 createDivs(16);
