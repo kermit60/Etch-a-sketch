@@ -1,13 +1,11 @@
-const HEIGHT = 700;
+const HEIGHT = 675;
 const grid = document.querySelector('.grid');
 const resetBut = document.querySelector('.reset');
 const changeColorBut = document.querySelector('.change-color');
 const rainbow = document.querySelector('.rainbow');
 const erase = document.querySelector('.erase');
 const sizeChange = document.querySelector('.size');
-
 let color = 'black';
-let tempColor = 'white';
 let isDown = false;
 
 
@@ -68,7 +66,7 @@ colour.addEventListener('input', (e) => {
 
 changeColorBut.addEventListener('click', () => {
     rainbowActive = false;
-    color = tempColor;
+    color = document.querySelector('#color-picker').value;
 });
 
 // making the erase function
@@ -96,7 +94,6 @@ function rainbowColor() {
 }
 
 rainbow.addEventListener('click', () => {
-    tempColor = color;
     rainbowColor();
 });
 
