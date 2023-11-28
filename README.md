@@ -9,4 +9,5 @@ This repository contains the source code for this Etch-a-sketch  application
 # Technologies Used
 - HTML 5 & CSS
 - Javascript
-# Credits
+# Live repo:
+[repo](doc:https://kermit60.github.io/Etch-a-sketch/)
